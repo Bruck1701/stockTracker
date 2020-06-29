@@ -1,1 +1,5 @@
-<h1> Welcome to the main page</h1>
+<h1> Welcome to Stock Tacker Social Media App</h1>
+Logged user = <%= current_user.email  %>
+<br>
+
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %> 

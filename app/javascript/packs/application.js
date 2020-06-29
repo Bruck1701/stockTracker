@@ -15,3 +15,8 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+
+import 'bootstrap';
+import JQuery from 'jquery';
+window.$ = window.JQuery = JQuery;

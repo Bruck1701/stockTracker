@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>StockTracker</title>
+    <title>Stock Tracker Social Media App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,8 +10,11 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render 'layouts/navbar'  %> 
+    
+    <%= render 'layouts/messages' %>
+    <div class="container mt-4"> 
     <%= yield %>
+  </div>
   </body>
 </html>

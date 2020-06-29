@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.7'
 # using devise gem authentication
 gem 'devise'
 
+gem 'devise-bootstrap-views', '~> 1.0'
+
 # protect the API keys
 gem 'figaro'
 

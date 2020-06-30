@@ -30,11 +30,25 @@ gem 'devise-bootstrap-views', '~> 1.0'
 # protect the API keys
 gem 'figaro'
 
+# get stock data from iex Cloud API 
+gem 'iex-ruby-client'
+
+# get crypto currency value
+#gem 'pry'
+#gem 'coingecko', '~> 0.2.0'
+#gem 'coin_market_cap'
+
+# client to access coingecko API
+gem 'coingecko_client', '~> 0.1.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+
+
 
 group :production do
 # postgresql for the production

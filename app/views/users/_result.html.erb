@@ -1,0 +1,11 @@
+<div class="card-block ml-4">
+  <%= render 'layouts/messages' %> 
+</div>
+<% if @investment %>
+  <div class="card card-header card-block ml-4">
+    <strong>   Symbol: </strong> <%= @investment.symbol %> 
+    <strong>   Name: </strong> <%= @investment.name %> 
+    <strong>   Type: </strong> <%= @investment.investment_type %> 
+    <strong>   Price: </strong> <%= @investment.last_price %> 
+  </div>
+<% end %>

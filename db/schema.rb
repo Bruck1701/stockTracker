@@ -10,18 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_30_104604) do
+ActiveRecord::Schema.define(version: 2020_07_01_123027) do
 
-  create_table "cryptos", force: :cascade do |t|
+  create_table "investments", force: :cascade do |t|
+    t.string "symbol"
     t.string "name"
-    t.decimal "last_price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "stocks", force: :cascade do |t|
-    t.string "ticker"
-    t.string "name"
+    t.string "investment_type"
     t.decimal "last_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

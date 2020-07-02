@@ -48,6 +48,8 @@ gem 'coingecko_client', '~> 0.1.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 
+# font awesome
+gem 'font-awesome-rails'
 
 
 group :production do

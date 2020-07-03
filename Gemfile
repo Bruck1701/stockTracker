@@ -52,6 +52,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'font-awesome-rails'
 
 
+gem 'hirb'
+
+
 group :production do
 # postgresql for the production
   gem 'pg'

@@ -1,11 +1,15 @@
 class Investment < ApplicationRecord
 
+  has_many :user_invs
+  has_many :users, through: :user_invs
+
+
+  validates :name, :symbol, :investment_type, presence: true
 
   def self.list_coins
     CoingeckoClient::Client.list_coins
   end
   
-
   def self.stock_lookup(ticker,investment_type)
     client = IEX::Api::Client.new(
     publishable_token: ENV['publishable_token'] ,
@@ -17,7 +21,7 @@ class Investment < ApplicationRecord
           symbol: ticker,
           last_price: client.price(ticker),
           investment_type: investment_type)
-        
+      
     rescue => exception
       return nil  
     end       

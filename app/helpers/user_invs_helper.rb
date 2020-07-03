@@ -1,0 +1,2 @@
+module UserInvsHelper
+end

@@ -1,0 +1,2 @@
+class UserInvsController < ApplicationController
+end

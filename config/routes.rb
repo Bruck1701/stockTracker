@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :user_invs, only: [:create]
+  resources :user_invs, only: [:create, :destroy]
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

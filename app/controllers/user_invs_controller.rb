@@ -2,10 +2,7 @@ class UserInvsController < ApplicationController
 
   def create
     
-    
     investment = Investment.in_db?(user_inv_params[:symbol],user_inv_params[:type])
-
-
     if investment.blank?
       # if the investment is not already on the table.
       investment = Investment.new(symbol:user_inv_params[:symbol],
@@ -13,10 +10,7 @@ class UserInvsController < ApplicationController
                                   investment_type:user_inv_params[:type],
                                   last_price:user_inv_params[:price] )
       investment.save
-      
       action = verify_if_can_track(investment)
-  
-
     else 
       # if the investment is already on the table, it updates its price 
       if investment.last_price != user_inv_params[:price]
@@ -31,12 +25,21 @@ class UserInvsController < ApplicationController
         end
       end
     end
-    
     if action
       flash[:notice] = "#{investment.name} was succesfully #{action} your porfolio"
       redirect_to my_portfolio_path
     end
   end
+
+  def destroy
+    investment = Investment.find(params[:id])
+    user_inv = UserInv.where(user_id: current_user.id, investment_id: investment.id ).first
+    user_inv.destroy
+    flash[:notice] = "#{investment.investment_type} #{investment.symbol} was successfully removed from portfolio"
+    redirect_to my_portfolio_path
+
+  end
+
 
 
 

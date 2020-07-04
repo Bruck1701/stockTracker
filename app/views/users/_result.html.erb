@@ -8,6 +8,7 @@
     <strong>   Type: </strong> <%= @crypto.investment_type %> 
     <strong>   Price: </strong> <%= @crypto.last_price %> 
 
+  
 
     <%= link_to  'Track in Portfolio', user_invs_path(user:current_user, 
                                                    name: @crypto.name.capitalize, 
@@ -16,6 +17,8 @@
                                                    price:@crypto.last_price
                                                    ),
                                     class: "btn btn-success ml-4", method: :post %> 
+
+
   </div>
 <% end %>
 

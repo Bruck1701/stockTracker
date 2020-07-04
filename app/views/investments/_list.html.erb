@@ -14,13 +14,18 @@
         </thead>
         <tbody>
 
-          <% @tracked_investments.each do |inv| %>
+          <% @tracked_investments.each do |investment| %>
           <tr>
-            <th scope="row"> <%=inv.symbol.upcase %> </th>
-            <td><%=inv.name.capitalize %></td>
-            <td><%=inv.investment_type %></td>
-            <td><%=inv.last_price %></td>
-            <td>[Place Holder]</td>
+            <th scope="row"> <%=investment.symbol.upcase %> </th>
+            <td><%=investment.name.capitalize %></td>
+            <td><%=investment.investment_type %></td>
+            <td><%=investment.last_price %></td>
+            <td>
+
+              <%= link_to "Remove" , user_inv_path(investment), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-warning' %> 
+
+
+            </td>
           </tr>
           <% end %> 
         

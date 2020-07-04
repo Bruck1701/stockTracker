@@ -1,11 +1,38 @@
 <div class="card-block">
   <%= render 'layouts/messages' %> 
 </div>
-<% if @investment %>
+<% if @crypto %>
   <div class="card card-header card-block">
-    <strong>   Symbol: </strong> <%= @investment.symbol %> 
-    <strong>   Name: </strong> <%= @investment.name %> 
-    <strong>   Type: </strong> <%= @investment.investment_type %> 
-    <strong>   Price: </strong> <%= @investment.last_price %> 
+    <strong>   Symbol: </strong> <%= @crypto.symbol.upcase %> 
+    <strong>   Name: </strong> <%= @crypto.name.capitalize %> 
+    <strong>   Type: </strong> <%= @crypto.investment_type %> 
+    <strong>   Price: </strong> <%= @crypto.last_price %> 
+
+
+    <%= link_to  'Track in Portfolio', user_invs_path(user:current_user, 
+                                                   name: @crypto.name.capitalize, 
+                                                   symbol:@crypto.symbol.upcase,
+                                                   type:@crypto.investment_type,
+                                                   price:@crypto.last_price
+                                                   ),
+                                    class: "btn btn-success ml-4", method: :post %> 
+  </div>
+<% end %>
+
+<% if @stock %>
+  <div class="card card-header card-block mt-4">
+    <strong>   Symbol: </strong> <%= @stock.symbol.upcase %> 
+    <strong>   Name: </strong> <%= @stock.name.capitalize %> 
+    <strong>   Type: </strong> <%= @stock.investment_type %> 
+    <strong>   Price: </strong> <%= @stock.last_price %> 
+
+
+    <%= link_to  'Track in Portfolio', user_invs_path(user:current_user, 
+                                                   name: @stock.name.capitalize, 
+                                                   symbol:@stock.symbol.upcase,
+                                                   type:@stock.investment_type,
+                                                   price:@stock.last_price
+                                                   ),
+                                    class: "btn btn-success ml-4", method: :post %> 
   </div>
 <% end %>

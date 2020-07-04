@@ -1,4 +1,7 @@
 class Investment < ApplicationRecord
+  before_save {self.symbol = self.symbol.upcase}
+  before_save {self.name = self.name.capitalize}
+
 
   has_many :user_invs
   has_many :users, through: :user_invs
@@ -40,6 +43,7 @@ class Investment < ApplicationRecord
     end
   end
 
+
   def self.new_lookup(investment_name, investment_symbol,investment_type)
     
     if investment_type.eql? "Cryptocurrency"
@@ -47,9 +51,12 @@ class Investment < ApplicationRecord
     else
       return stock_lookup(investment_symbol,investment_type)
     end
-
   end
 
+
+  def self.in_db?(symbol,investment_type)
+    where(symbol: symbol).where(investment_type: investment_type).first
+  end
 
 
 end

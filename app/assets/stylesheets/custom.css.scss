@@ -1,6 +1,22 @@
 @import 'bootstrap/dist/css/bootstrap';
 
 
+html,body{
+  height: 100%;
+}
+
+body{
+  background-color: lightgray;
+  
+}
+
+#sticky-footer {
+  flex-shrink: none !important;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 .search-area{
   padding-top: 50px;
 }
@@ -15,10 +31,27 @@
 }
 
 #results{
+  
   padding-left: 0px !important;
 }
 
 .card-block{
+  background-color: white;
+  padding-bottom: 0px !important;
   
   display: inline-block;
+}
+
+.logout-button{
+  margin-right: 5px;
+}
+
+.user-name{
+  margin-top: 3.5%;
+  padding-right: 7px;
+  color: grey;
+}
+
+.result-table{
+  background-color: white;
 }

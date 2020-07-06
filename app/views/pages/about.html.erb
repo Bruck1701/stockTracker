@@ -1,0 +1,47 @@
+<div class="container">
+<div class="jumbotron text-left">
+
+    <h2 class="text-right">About Investment Tracker App </h2>
+    <hr>
+
+    <p>
+    This is a Ruby on Rails project for a template of a social media model with users and investments.
+    Users can follow other users and track investments such as stocks and cryptocurrency. The user can search for new investments or track investments that his friends are tracking.
+    </p>
+
+    <p>
+    The source code is available at <a href=https://github.com/Bruck1701/stockTracker>https://github.com/Bruck1701/stockTracker </a> and is licensed under MIT License
+    </p>
+
+    Technical and Development specifications:<br>
+    <ul>
+    <li> Ruby version: 2.7.0 </li>
+    <li>Rails version: 6.0.3.2</li>
+
+    <li>DB dependencies:</li>
+      <ul>
+        <li>Dev setting: Sqlite3</li>
+        <li>Prod setting: PostgreSQL</li>
+      </ul>
+    <li>Configuration instruction:
+      <p>
+        You need to register with <a href=//iexcloud.io/> iex-cloud </a> to get the publishable_token and secret_token to be able to use their API. 
+        With these tokens, you install the figaro gem and paste the tokens in the application.yml file. To deploy the app to heroku, you need to put theses tokens as config_vars in the heroku settings.
+      </p>
+    </li>
+
+    <li>APIs used:
+      <ul>
+        <li> <a href=https://github.com/dblock/iex-ruby-client > iex-ruby-client</a> to fetch stock information   </li>
+        <li> <a href=https://github.com/Bruck1701/coingecko_client> coingecko_client </a> to fetch cryptocurrency information</li>
+      </ul>
+    </li>
+
+    <li>How to run the test suite: Minitest testing suite. To run the tests: rails test</li>
+        
+    <li>Deployment instructions: in a local network: rails server -b 0.0.0.0 -p </li>
+  </ul>    
+
+</div>
+
+</div>

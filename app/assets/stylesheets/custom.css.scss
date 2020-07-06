@@ -1,13 +1,12 @@
-@import 'bootstrap/dist/css/bootstrap';
+@import "bootstrap/dist/css/bootstrap";
 
-
-html,body{
+html,
+body {
   height: 100%;
 }
 
-body{
+body {
   background-color: lightgray;
-  
 }
 
 #sticky-footer {
@@ -17,41 +16,39 @@ body{
   width: 100%;
 }
 
-.search-area{
+.search-area {
   padding-top: 50px;
 }
 
-.no-right-padding{
+.no-right-padding {
   padding-right: 0px !important;
-
 }
 
-.no-left-padding{
+.no-left-padding {
   padding-left: 0px !important;
 }
 
-#results{
-  
+#results,
+#friend_results {
   padding-left: 0px !important;
 }
 
-.card-block{
+.card-block {
   background-color: white;
-  padding-bottom: 0px !important;
-  
+
   display: inline-block;
 }
 
-.logout-button{
+.logout-button {
   margin-right: 5px;
 }
 
-.user-name{
+.user-name {
   margin-top: 3.5%;
   padding-right: 7px;
-  color: grey;
+  color:lightgray;
 }
 
-.result-table{
+.result-table {
   background-color: white;
 }

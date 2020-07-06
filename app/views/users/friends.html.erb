@@ -1,0 +1,27 @@
+
+<h1>Friends</h1>
+<%= form_tag search_friend_path, remote:true, method: :get do  %>
+  <div class="form-group row">
+    <div class="col-sm-9 no-right-padding">
+      <%= text_field_tag :friend, params[:friend], 
+                        placeholder: "Name of email",
+                        autofocus: true,
+                        class: "form-control form-control-lg" %> 
+    </div>
+    <div class="col-sm-3 no-left-padding">
+      <%= button_tag type: :submit, class: "btn btn-success",
+          data: {disable_with: "<i class='fa fa-spinner fa-spin fa-2x'></i>".html_safe} do %>
+      <%= fa_icon 'search 2x' %> 
+      <% end %> 
+
+    </div>
+  </div>
+<% end %>  
+
+  <div id="friend_results"> </div>
+
+<% if !@friends.empty? %> 
+  <%= render 'friends/list' %>
+<% else %>
+  You are not following any friends yet!
+<% end %>

@@ -1,10 +1,7 @@
-<% if !@tracked_investments.empty? %> 
 <div class="mt-4">
-Currently tracking:
+  Currently tracking:
   <div class="row mt-2">
-    
     <div class="col-9 text-center">
-
       <table class="table table-hover result-table shadow">
         <thead class="thead-dark">
           <tr>
@@ -12,30 +9,38 @@ Currently tracking:
             <th scope="col">Name</th>
             <th scope="col">Type</th>
             <th scope="col">Price</th>
-            <th scope="col">Actions</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-
           <% @tracked_investments.each do |investment| %>
-          <tr>
-            <th scope="row"> <%=investment.symbol.upcase %> </th>
-            <td><%=investment.name.capitalize %></td>
-            <td><%=investment.investment_type %></td>
-            <td><%=investment.last_price %></td>
-            <td>
-
-              <%= link_to "Remove" , user_inv_path(investment), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-warning' %> 
-
-
-            </td>
-          </tr>
-          <% end %> 
-        
+            <tr>
+              <th scope="row"><%=investment.symbol.upcase %></th>
+              <td><%=investment.name.capitalize %></td>
+              <td><%=investment.investment_type %></td>
+              <td><%=investment.last_price %></td>
+              <td>
+                <% if current_user.id == @user.id%> 
+                  <%= link_to "Remove" , user_inv_path(investment), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-warning' %> 
+                <%else%> 
+                  <% if  current_user.has_investment?(investment.symbol,investment.investment_type)  %>
+                    <span class="badge badge-secondary">
+                    You are tracking this asset
+                    </span>
+                  <%else%> 
+                    <%= link_to 'Track in my Portfolio',  user_invs_path(user:current_user, 
+                                                                          name:  investment.name.capitalize, 
+                                                                          symbol:investment.symbol.upcase,     
+                                                                          type:investment.investment_type, 
+                                                                          price:investment.last_price ), 
+                                                          class: "btn btn-success ml-4", method: :post %> 
+                  <%end%> 
+                <%end%>
+              </td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
-
     </div>
   </div>
 </div>
-<% end %> 

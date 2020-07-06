@@ -1,5 +1,7 @@
-<h1> Welcome to Stock Tracker Social Media App</h1>
-Logged user = <%= current_user.email  %>
+<h1> Welcome to Investment Tracker Social Media App</h1>
+<p>
+Logged as:<%= current_user.email  %>
+</p>
 <br>
 
 <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> 

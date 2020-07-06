@@ -2,15 +2,15 @@
   <%= render 'layouts/messages' %> 
 </div>
 <% if @crypto %>
+
   <div class="card card-header card-block">
-    <strong>   Symbol: </strong> <%= @crypto.symbol.upcase %> 
-    <strong>   Name: </strong> <%= @crypto.name.capitalize %> 
-    <strong>   Type: </strong> <%= @crypto.investment_type %> 
+
+    <strong>   Symbol: </strong> <%= @crypto.symbol.upcase %> &emsp;
+    <strong>   Name: </strong> <%= @crypto.name.capitalize %> &emsp;
+    <strong>   Type: </strong> <%= @crypto.investment_type %> &emsp;
     <strong>   Price: </strong> <%= @crypto.last_price %> 
 
-  
-
-    <%= link_to  'Track in Portfolio', user_invs_path(user:current_user, 
+      <%= link_to  'Track in Portfolio', user_invs_path(user:current_user, 
                                                    name: @crypto.name.capitalize, 
                                                    symbol:@crypto.symbol.upcase,
                                                    type:@crypto.investment_type,
@@ -23,10 +23,11 @@
 <% end %>
 
 <% if @stock %>
+
   <div class="card card-header card-block mt-4">
-    <strong>   Symbol: </strong> <%= @stock.symbol.upcase %> 
-    <strong>   Name: </strong> <%= @stock.name.capitalize %> 
-    <strong>   Type: </strong> <%= @stock.investment_type %> 
+    <strong>   Symbol: </strong> <%= @stock.symbol.upcase %> &emsp;
+    <strong>   Name: </strong> <%= @stock.name.capitalize %> &emsp;
+    <strong>   Type: </strong> <%= @stock.investment_type %> &emsp;
     <strong>   Price: </strong> <%= @stock.last_price %> 
 
 

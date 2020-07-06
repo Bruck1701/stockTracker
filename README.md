@@ -1,25 +1,32 @@
-# Stock Tracker Social Club
+# Investment Tracker App
 
-This is a social media app that let users track stock values.
+This is a Ruby on Rails project for a template of a social media model with users and investments. Users can follow other users and track investments such as stocks and cryptocurrency. The user can search for new investments or track investments that his friends are tracking.
 
-Things you may want to cover:
 
-* Rails version: 6.0.3.2
+Technical and Development specifications:
 
 * Ruby version: 2.7.0
+* Rails version: 6.0.3.2
 
-* System dependencies
+* DB dependencies:
+* Dev setting: Sqlite3
+* Prod setting: PostgreSQL
 
-* Configuration
+# Configuration instruction:
+You need to register with <a href=//iexcloud.io/> iex-cloud </a> to get the publishable_token and secret_token to be able to use their API. 
+With these tokens, you install the figaro gem (already included in the Gemfile) and paste the tokens in the application.yml file. 
+To deploy the app to heroku, you need to put theses tokens as config_vars in the heroku settings.
 
-* Database creation
+# APIs used:
+* <a href=https://github.com/dblock/iex-ruby-client > iex-ruby-client</a> to fetch stock information   
+* <a href=https://github.com/Bruck1701/coingecko_client> coingecko_client </a> to fetch cryptocurrency information
 
-* Database initialization
+# Tests
+How to run the test suite: Minitest testing suite. To run the tests: rails test
 
-* How to run the test suite
+# Deployment instructions: 
+in a local network: rails server -b 0.0.0.0 -p
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
 

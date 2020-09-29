@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   
   resources :user_invs, only: [:create, :destroy]
   devise_for :users
+  
   root to: "pages#index"
+
   get 'my_portfolio', to: 'users#my_portfolio'
   get 'search_investment', to: 'investments#search'
   get 'friends', to: 'users#friends'
